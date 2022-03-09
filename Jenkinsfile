@@ -8,7 +8,7 @@ pipeline{
       choice(name: 'MAVENGOAL', defaultValue: 'clean\clean package\clean install')
     }
     options{
-        timeout(time: 30 , unit: 'SECONDS')
+        timeout(time: 30 , unit: 'MINUTES')
     }
 
         stages{
