@@ -2,7 +2,11 @@ pipeline{
     agent any
 	triggers{
     pollSCM('H * * * 1-5')	
-}
+    }
+    parameters{
+        string(name:'MAVENGOAL', defaultValue:'clean package',description:'Enter the maven goal')
+    }
+
         stages{
             stage('scm'){
                     steps{
@@ -11,7 +15,7 @@ pipeline{
                 }
             stage('build'){
                     steps{
-                        powershell 'mvn clean package'
+                        powershell "mvn ${params.MAVENGOAL}"
                     }
                 }
             stage('archive'){
