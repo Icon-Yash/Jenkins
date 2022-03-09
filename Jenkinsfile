@@ -4,7 +4,8 @@ pipeline{
     pollSCM('H * * * 1-5')	
     }
     parameters{
-        string(name:'MAVENGOAL', defaultValue:'clean package',description:'Enter the maven goal')
+      /*  string(name:'MAVENGOAL', defaultValue:'clean package',description:'Enter the maven goal')*/
+      choice(name: 'MAVENGOAL', defaultValue: 'clean\clean package\clean install')
     }
     options{
         timeout(time: 30 , unit: 'SECONDS')
