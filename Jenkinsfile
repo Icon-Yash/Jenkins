@@ -5,7 +5,7 @@ pipeline{
     }
     parameters{
       /*  string(name:'MAVENGOAL', defaultValue:'clean package',description:'Enter the maven goal')*/
-      choice(name: 'MAVENGOAL', choices: 'clean\clean package\clean install', description: 'Enter the maven goal')
+      choice(name: 'MAVENGOAL', choices: 'clean\nclean package\nclean install', description: 'Enter the maven goal')
     }
     options{
         timeout(time: 30 , unit: 'MINUTES')
