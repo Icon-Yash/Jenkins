@@ -1,7 +1,7 @@
 pipeline{
     agent any
 	triggers{
-    pollSCM('H * * * 1-5')	
+    pollSCM('59 23 * * 1-5')	
     }
     parameters{
       /*  string(name:'MAVENGOAL', defaultValue:'clean package',description:'Enter the maven goal')*/
@@ -14,7 +14,7 @@ pipeline{
         stages{
             stage('scm'){
                     steps{
-                        git branch: 'developer', url: 'https://github.com/spring-projects/spring-petclinic.git'
+                        git branch: 'qt', url: 'https://github.com/spring-projects/spring-petclinic.git'
                     }
                 }
             stage('build'){
